@@ -19,7 +19,7 @@ class UsersController < ApplicationController
       redirect_to root_path
     else
       render 'new'
-      errors.add ("Cannot add user")
+      # errors.add ("Cannot add user")
     end
   end
 
@@ -35,7 +35,7 @@ class UsersController < ApplicationController
       redirect_to user_path
     else
       render 'edit'
-      errors.add ("Cannot update user")
+      # errors.add ("Cannot update user")
     end
   end
 

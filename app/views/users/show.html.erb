@@ -1,1 +1,4 @@
  <h1>Welcome! <%= @user.user_name %></h1>
+
+<%= link_to "Remove User", user_path, method: :delete, data: {confirm: "Remove User?"} %>
+<%= link_to "Update Profile", edit_user_path(@user) %>
