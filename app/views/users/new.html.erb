@@ -1,0 +1,14 @@
+<h3>Signup</h3>
+
+<%= form_for @user do |f| %>
+<div class ="field">
+  <%= f.label :user_name %> <br>
+  <%= f.text_field :youtube_id %> <br>
+</div>
+  Title <%= f.text_field :title %> <br>
+  Title <%= f.text_field :album %> <br>
+  Title <%= f.text_field :featured_artists %> <br>
+  Title <%= f.date_field :released_on %> <br>
+
+  <%= f.submit "Dale" %>
+<% end %>
