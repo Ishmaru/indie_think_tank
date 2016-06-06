@@ -19,7 +19,7 @@ class UsersController < ApplicationController
       redirect_to root_path
     else
       render 'new'
-      errors.add ("cannot add user")
+      errors.add ("Cannot add user")
     end
   end
 
@@ -31,16 +31,19 @@ class UsersController < ApplicationController
     @user = User.find(params[:id])
 
     if @user.update_attributes(user_params)
-      redirect_to show_user_path
+      flash[:notice] = "Updated Profile!"
+      redirect_to user_path
     else
       render 'edit'
+      errors.add ("Cannot update user")
     end
   end
-
 
  def destroy
     @user = User.find(params[:id])
     @user.destroy
+    flash[:notice] = "Account Removed."
+    redirect_to root_path
   end
 
   private
