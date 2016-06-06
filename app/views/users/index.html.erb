@@ -1,18 +1,2 @@
-<header>
-  <div class="header">
-<p>
-  <% if current_user %>
-    Welcome, <%= current_user.user_name %>
-    &nbsp;&nbsp;|&nbsp;&nbsp;
-    <%= link_to 'Log Out', session_path('dummy'), method: :delete %>
-  <% else %>
-    <%= link_to 'Log In', login_path %>
-    &nbsp;&nbsp;|&nbsp;&nbsp;
-    <%= link_to 'Sign Up', new_user_path %>
-  <% end %>
-</p>
-  </div>
-</header>
-
 <h1>Indie Think Tank</h1>
 <h4>"Connecting people with game ideas, to those who can make it happen!"</h4>

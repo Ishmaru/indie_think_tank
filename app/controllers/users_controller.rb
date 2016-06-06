@@ -16,7 +16,7 @@ class UsersController < ApplicationController
     if @user.save
       session[:user_id] = @user.id
       flash[:notice] = "You have successfully signed up!"
-      redirect_to root_path
+      redirect_to user_path(@user)
     else
       render 'new'
       # errors.add ("Cannot add user")
@@ -32,7 +32,7 @@ class UsersController < ApplicationController
 
     if @user.update_attributes(user_params)
       flash[:notice] = "Updated Profile!"
-      redirect_to user_path
+      redirect_to user_path(@user)
     else
       render 'edit'
       # errors.add ("Cannot update user")

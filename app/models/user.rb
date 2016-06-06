@@ -1,4 +1,6 @@
 class User < ActiveRecord::Base
+  has_many :games
+  has_many :ideas
   has_secure_password
   validates :email, presence: true, uniqueness: true
     # after_initialize :default_email
