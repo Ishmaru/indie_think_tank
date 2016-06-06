@@ -1,4 +1,12 @@
 class UsersController < ApplicationController
+  def index
+    @users = User.all
+  end
+
+  def show
+    @user = User.find(params[:id])
+  end
+
   def new
     @user = User.new
   end
@@ -13,10 +21,6 @@ class UsersController < ApplicationController
       render 'new'
       errors.add ("cannot add user")
     end
-  end
-
-  def show
-    @user = User.find(params[:id])
   end
 
   def edit

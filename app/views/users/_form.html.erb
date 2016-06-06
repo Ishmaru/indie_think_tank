@@ -1,0 +1,22 @@
+  <% @user.errors.full_messages.each do |message| %>
+  <strong><% message %> </strong></p>
+  <% end %>
+  <%= form_for @user do |f| %>
+    <%= f.label "User Name: " %>
+    <%= f.text_field :user_name %>
+    <br/>
+    <%= f.label "Email: " %>
+    <%= f.text_field :email %>
+    <br/>
+    <%= f.label :password %>
+    <%= f.password_field :password %>
+    <br/>
+    <%= f.label :password_confirmation %>
+    <%= f.password_field :password_confirmation %>
+    <br/>
+    <%= button_tag(type: 'submit', class: 'btn btn-success') do %>
+       Create Account
+    <% end %>
+    <br/>
+    <%= link_to 'back', users_path, class: "btn btn-secondary" %>
+  <% end %>
