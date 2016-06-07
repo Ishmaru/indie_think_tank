@@ -1,4 +1,18 @@
- <h1>Welcome! <%= @user.user_name %></h1>
+<h1>Welcome! <%= @user.user_name %></h1>
+
+<% @games.each do |game| %>
+<%= link_to "#{game.title}", user_game_path(@user, game)%>
+<% end %>
+
+<br>
+
+<% @ideas.each do |idea| %>
+<%= link_to "#{idea.tag}", user_idea_path(@user, idea)%>
+<% end %>
+
+<br>
+<br>
 
 <%= link_to "Remove User", user_path, method: :delete, data: {confirm: "Remove User?"} %>
+<br>
 <%= link_to "Update Profile", edit_user_path(@user) %>

@@ -1,1 +1,5 @@
-index.html.erb
+<% @games.each do |game| %>
+  <li>
+    <strong><%= link_to game.title, game_path(game) %></strong> summary: <%= game.summary %>
+  </li>
+<% end %>

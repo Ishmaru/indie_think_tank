@@ -1,1 +1,6 @@
-index.html.erb
+<% @ideas.each do |idea| %>
+  <li>
+    <strong><%= link_to idea.tag, idea_path(idea) %></strong> summary: <%= idea.summary %>
+  </li>
+<% end %>
+

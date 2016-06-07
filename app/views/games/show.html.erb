@@ -4,7 +4,7 @@
 <br>
 <p><%= @game.description %></p>
 
-<a href="http://<%= @game.url %>">Download Link</a>
+<a href="<%= @game.url %>">Download Link</a>
 <br>
 <%= link_to "Update Game", edit_game_path(@game) %>
 <br>
