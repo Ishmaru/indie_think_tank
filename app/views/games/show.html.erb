@@ -1,0 +1,11 @@
+<h3><%= @game.title %></h3>
+
+<p><%= @game.summary %></p>
+<br>
+<p><%= @game.description %></p>
+
+<a href="http://<%= @game.url %>">Download Link</a>
+<br>
+<%= link_to "Update Game", edit_game_path(@game) %>
+<br>
+<%= link_to "Remove Game", game_path, method: :delete, data: {confirm: "Remove Game?"} %>

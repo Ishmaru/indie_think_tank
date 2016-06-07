@@ -1,0 +1,19 @@
+  <% @idea.errors.full_messages.each do |message| %>
+  <strong><% message %> </strong></p>
+  <% end %>
+  <%= form_for @idea do |f| %>
+    <%= f.label "Idea Tag: " %>
+    <%= f.text_field :tag %>
+    <br/>
+    <%= f.label "Short Summary: " %>
+    <%= f.text_field :summary %>
+    <br/>
+    <%= f.label "Description:" %>
+    <%= f.text_field :description %>
+    <br/>
+    <%= button_tag(type: 'submit', class: 'btn btn-success') do %>
+       Add Idea
+    <% end %>
+    <br/>
+    <%= link_to 'back', users_path, class: "btn btn-secondary" %>
+  <% end %>

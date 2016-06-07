@@ -1,0 +1,10 @@
+<h3><%= @idea.tag %></h3>
+
+<p><%= @idea.summary %></p>
+<br>
+<p><%= @idea.description %></p>
+
+<br>
+<%= link_to "Update Idea", edit_idea_path(@idea) %>
+<br>
+<%= link_to "Remove Idea", idea_path, method: :delete, data: {confirm: "Remove Game?"} %>

@@ -1,0 +1,7 @@
+<h3>Please Update your idea: <%= @idea.tag %></h3>
+
+
+<%= render 'form' %>
+
+<br>
+<%= link_to "Remove Idea", idea_path, method: :delete, data: {confirm: "Remove Idea?"} %>

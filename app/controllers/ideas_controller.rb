@@ -31,7 +31,7 @@ class IdeasController < ApplicationController
 
     if @idea.update_attributes(idea_params)
       flash[:notice] = "Updated Game!"
-      redirect_to user_path(@idea)
+      redirect_to idea_path(@idea)
     else
       render 'edit'
       # errors.add ("Cannot update user")

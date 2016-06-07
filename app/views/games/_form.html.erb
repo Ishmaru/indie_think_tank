@@ -1,0 +1,25 @@
+  <% @game.errors.full_messages.each do |message| %>
+  <strong><% message %> </strong></p>
+  <% end %>
+  <%= form_for @game do |f| %>
+    <%= f.label "Game Title: " %>
+    <%= f.text_field :title%>
+    <br/>
+    <%= f.label "Short Summary: " %>
+    <%= f.text_field :summary %>
+    <br/>
+    <%= f.label "Description:" %>
+    <%= f.text_field :description %>
+    <br/>
+    <%= f.label "Upload URL:" %>
+    <%= f.text_field :url %>
+    <br/>
+    <%= f.label "Image URL:" %>
+    <%= f.text_field :media %>
+    <br/>
+    <%= button_tag(type: 'submit', class: 'btn btn-success') do %>
+       Add Game
+    <% end %>
+    <br/>
+    <%= link_to 'back', users_path, class: "btn btn-secondary" %>
+  <% end %>
