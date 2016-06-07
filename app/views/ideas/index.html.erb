@@ -3,4 +3,7 @@
     <strong><%= link_to idea.tag, idea_path(idea) %></strong> summary: <%= idea.summary %>
   </li>
 <% end %>
-
+<br>
+<% if current_user %>
+  <%= link_to "Add a new idea!", new_idea_path %>
+<% end %>

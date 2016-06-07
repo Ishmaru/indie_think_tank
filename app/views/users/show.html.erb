@@ -1,13 +1,13 @@
 <h1>Welcome! <%= @user.user_name %></h1>
 
 <% @games.each do |game| %>
-<%= link_to "#{game.title}", user_game_path(@user, game)%>
+  <%= link_to "#{game.title}", user_game_path(@user, game)%>
 <% end %>
 
 <br>
 
 <% @ideas.each do |idea| %>
-<%= link_to "#{idea.tag}", user_idea_path(@user, idea)%>
+  <%= link_to "#{idea.tag}", user_idea_path(@user, idea)%>
 <% end %>
 
 <br>

@@ -5,4 +5,7 @@ class HomeController < ApplicationController
     @ideas = Idea.all
   end
 
+  def about
+  end
+
 end

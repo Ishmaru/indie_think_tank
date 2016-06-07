@@ -3,8 +3,21 @@
 <p><%= @idea.summary %></p>
 <br>
 <p><%= @idea.description %></p>
-
 <br>
-<%= link_to "Update Idea", edit_idea_path(@idea) %>
+<h4>Games made from idea:</h4>
+<% @games.each do |game| %>
+  <%= link_to "#{game.title}", idea_game_path(@idea, game)%>
+<% end %>
 <br>
-<%= link_to "Remove Idea", idea_path, method: :delete, data: {confirm: "Remove Game?"} %>
+<% if current_user %>
+  <%= link_to "Make this a Game!", new_game_path %>
+<% end %>
+<% if current_user == @idea.user_id %>
+  <%= link_to "Update Idea", edit_idea_path(@idea) %>
+  <br>
+  <%= link_to "Remove Idea", idea_path, method: :delete, data: {confirm: "Remove Game?"} %>
+  <br>
+  <%= link_to "Add a new idea!", new_idea_path %>
+<% elsif current_user %>
+  <%= link_to "Add your own idea!", new_idea_path %>
+<% end %>

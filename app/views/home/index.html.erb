@@ -1,11 +1,12 @@
 <h1>Indie Think Tank</h1>
 <h4>"Connecting people with game ideas, to those who can make it happen!"</h4>
-
+<h4>Games Listings</h4>
 <% @games.each do |game| %>
   <li>
     <strong><%= link_to game.title,  game_path(game) %></strong> summary: <%= game.summary %>
   </li>
 <% end %>
+<h4>Ideas Listings</h4>
 <% @ideas.each do |idea| %>
   <li>
     <strong><%= link_to idea.tag, idea_path(idea) %></strong> summary: <%= idea.summary %>
