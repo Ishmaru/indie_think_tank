@@ -24,6 +24,11 @@
 </header>
 
 
+  <div class="container">
+    <% flash.each do |type, message| %>
+      <p class="flash <%= type.to_s %>"><%= message %></p>
+    <% end %>
+  </div>
 <%= yield %>
 
 </body>
