@@ -10,6 +10,6 @@ class Idea < ActiveRecord::Base
       self.description ||= summary
     end
     def assign_user
-      self.user_id = current_user
+      self.user_id ||= current_user
     end
 end

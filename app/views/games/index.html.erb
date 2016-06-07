@@ -1,5 +1,7 @@
+<h2>Try these Awesome games!</h2>
 <% @games.each do |game| %>
   <li>
+    <img src="<%= game.media %>" alt="<%= game.title %>" height="200" width="320">
     <strong><%= link_to game.title, game_path(game) %></strong> summary: <%= game.summary %>
   </li>
 <% end %>
