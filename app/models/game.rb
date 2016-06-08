@@ -5,14 +5,14 @@ class Game < ActiveRecord::Base
   validates :summary, presence: true
   validates :url, presence: true, uniqueness: true
   before_save :default_description
-  before_save :assign_user
+  # before_save :assign_user
 
 
   private
     def default_description
       self.description ||= summary
     end
-    def assign_user
-      self.user_id ||= session[:user_id]
-    end
+    # def assign_user
+    #   self.user_id ||= session[:user_id]
+    # end
 end

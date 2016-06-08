@@ -16,6 +16,7 @@ class GamesController < ApplicationController
   end
 
   def create
+    # @user = session[:user_id]
     @idea = Idea.find(params[:idea_id])
     @game = @idea.games.new (game_params)
     if @game.save
