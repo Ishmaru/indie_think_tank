@@ -1,7 +1,14 @@
 class IdeasController < ApplicationController
   before_action :authorize, except: [:index, :show]
   def index
-    @ideas = Idea.all
+    @sort_by = params[:sort_by]
+    if @sort_by == 'tag'
+      @ideas = Idea.order(:tag)
+    elsif @sort_by == 'old'
+      @ideas = Idea.order(created_at: :desc)
+    else
+      @ideas = Idea.order(:created_at)
+    end
   end
 
   def show
@@ -49,9 +56,9 @@ class IdeasController < ApplicationController
     redirect_to root_path
   end
 
+
   private
     def idea_params
       params.require(:idea).permit(:tag, :summary, :description)
     end
-
 end
