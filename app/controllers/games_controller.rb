@@ -16,9 +16,9 @@ class GamesController < ApplicationController
   end
 
   def create
-    # @user = session[:user_id]
     @idea = Idea.find(params[:idea_id])
     @game = @idea.games.new (game_params)
+    @game.user = current_user
     if @game.save
       flash[:notice] = "Game added"
       redirect_to idea_game_path(@idea, @game)

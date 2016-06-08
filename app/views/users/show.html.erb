@@ -7,15 +7,15 @@
 <br>
 <h3>Your Awesome Ideas!</h3>
 <% @ideas.each do |idea| %>
-  <%= link_to "#{idea.tag}", user_idea_path(@user, idea)%>
+<li>
+  <%= link_to "#{idea.tag}", user_idea_path(@user, idea) %>
+</li>
 <% end %>
 <br>
 <% if current_user %>
-  <%= link_to "Add new idea!", new_idea_path %>
+  <%= link_to "Add new idea!", new_idea_path, class: "btn btn-primary" %>
 <% end %>
-<br>
 <footer>
-  <%= link_to "Remove User", user_path, method: :delete, data: {confirm: "Remove User?"} %>
-  <br>
-  <%= link_to "Update Profile", edit_user_path(@user) %>
+  <%= link_to "Update Profile", edit_user_path(@user), class: "btn btn-primary" %>
+  <%= link_to "Remove User", user_path, class: "btn btn-danger", method: :delete, data: {confirm: "Remove User?"} %>
 </footer>

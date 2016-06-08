@@ -5,19 +5,18 @@
 <br>
 <h4>Games made from idea:</h4>
 <% @games.each do |game| %>
+  <img src="<%= game.media %>" alt="<%= game.title %>" height="200" width="320">
   <%= link_to "#{game.title}", idea_game_path(@idea, game)%>
 <% end %>
 <br>
 <% if current_user %>
-  <%= link_to "Make this a Game!", new_idea_game_path(@idea) %>
+  <%= link_to "Make this a Game!", new_idea_game_path(@idea), class: "btn btn-primary" %>
 <% end %>
 <% if session[:user_id] == @idea.user_id %>
-  <%= link_to "Update Idea", edit_idea_path(@idea) %>
-  <br>
-  <%= link_to "Remove Idea", idea_path, method: :delete, data: {confirm: "Remove Game?"} %>
-  <br>
-  <%= link_to "Add a new idea!", new_idea_path %>
+  <%= link_to "Update Idea", edit_idea_path(@idea), class: "btn btn-primary" %>
+  <%= link_to "Add a new idea!", new_idea_path, class: "btn btn-primary" %>
+  <%= link_to "Remove Idea", idea_path, class: "btn btn-danger", method: :delete, data: {confirm: "Remove Game?"} %>
 <% elsif current_user %>
-  <%= link_to "Add your own idea!", new_idea_path %>
+  <%= link_to "Add your own idea!", new_idea_path, class: "btn btn-primary" %>
 <% end %>
-  <br>
+

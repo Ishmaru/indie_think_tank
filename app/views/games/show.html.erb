@@ -2,12 +2,13 @@
 <br>
 <img src="<%= @game.media %>" alt="<%= @game.title %>" height="400" width="640">
 <br>
+<h4>Description</h5>
 <p><%= @game.description %></p>
-
-<a href="<%= @game.url %>">Download Link</a>
+<h4>link to Game</h5>
+<a href="<%= @game.url %>" class= "btn btn-success">Download Link</a>
 <br>
 <% if session[:user_id] == @game.user_id %>
-  <%= link_to "Update Game", edit_game_path(@game) %>
+  <%= link_to "Update Game", edit_game_path(@game), class: "btn btn-primary" %>
   <br>
-  <%= link_to "Remove Game", game_path, method: :delete, data: {confirm: "Remove Game?"} %>
+  <%= link_to "Remove Game", game_path,class: "btn btn-danger", method: :delete, data: {confirm: "Remove Game?"} %>
 <% end %>
