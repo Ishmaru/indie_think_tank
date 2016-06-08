@@ -5,3 +5,7 @@
     <strong><%= link_to game.title, game_path(game) %></strong> summary: <%= game.summary %>
   </li>
 <% end %>
+
+<% if current_user %>
+  <%= link_to "Need an idea?", ideas_path, class: "btn btn-primary" %>
+<% end %>

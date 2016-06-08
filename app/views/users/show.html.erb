@@ -4,6 +4,8 @@
   <img src="<%= game.media %>" alt="<%= game.title %>" height="200" width="320">
   <%= link_to "#{game.title}", user_game_path(@user, game)%>
 <% end %>
+<%= link_to "Need an idea?", ideas_path, class: "btn btn-primary" %>
+
 <br>
 <h3>Your Awesome Ideas!</h3>
 <% @ideas.each do |idea| %>
