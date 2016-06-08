@@ -1,6 +1,7 @@
 Rails.application.routes.draw do
   root 'home#index'
   resources :users, only: [:show, :new, :create, :edit, :destroy]
+  # resources :games, except: [:new]
   resources :games
   resources :ideas
   resources :sessions, only: [:new, :create, :destroy]

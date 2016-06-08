@@ -5,8 +5,17 @@ Idea.destroy_all
 guy = User.new user_name: "Ishmaru", email: "adkkg@gmail.com", password: "1234", password_confirmation: "1234"
 guy.save
 
+guy2 = User.new user_name: "Raptor", email: "imafakeemail@fake.com", password: "1234", password_confirmation: "1234"
+guy2.save
+
+guy3 = User.new user_name: "TrumpLover666", email: "watchtheworldburn@aol.com", password: "1234", password_confirmation: "1234"
+guy3.save
+
 girl = User.new email: "lovegames@yahoo.com", password: "1234", password_confirmation: "1234"
 girl.save
+
+girl2 = User.new user_name: "Akari", email: "starlet22@hotmail.com", password: "1234", password_confirmation: "1234"
+girl2.save
 
 idea1 = Idea.new tag: "Action", summary: "Mario like Platformer", description: "A platformer with a bird character, can double jump to fly for short distances. Poops on enemies to destroy them."
 idea1.user = girl
@@ -24,6 +33,26 @@ idea4 = Idea.new tag: "Action", summary: "Classic Arena Shooter", description: "
 idea4.user = guy
 idea4.save
 
+idea5 = Idea.new tag: "RPG", summary: "Unlimited RPG Generation Game", description: "I like Pokemon, where I battle with different moves, against endless enemies. I want it to be awesome!"
+idea5.user = girl2
+idea5.save
+
+idea6 = Idea.new tag: "Action", summary: "Top-Down Shootem up", description: "Supershooter, Eat enemies to absorb their attacks, and shoot them right back!"
+idea6.user = guy3
+idea6.save
+
+idea7 = Idea.new tag: "Table", summary: "Virtual 52 Pickup! Just click all randomly scattered cards to win!"
+idea7.user = guy3
+idea7.save
+
+idea8 = Idea.new tag: "Table", summary: "Virtual Tic Tac Toe"
+idea8.user = guy3
+idea8.save
+
+idea9 = Idea.new tag: "RTS", summary: "We want some steam punk!", description: "Chasm is base in a Fantasy World War 2 world. The powerful Republic of Cruix launched a war of conquest against the world and the only nation able to withstand the onslaught is the wealthy Kindom of Alandia. This game is focused on simple custom deathmatch style battle. There are no Campaigns, Scenarios, or Multiplayer in this game. Still Chasm boasts higher resolution models and textures and still a lot of fun!"
+idea9.user = girl
+idea9.save
+
 game1 = Game.new title: "Annex: Conquer the World", summary: "Annex is a fast paced RTS game with Anime themed characters.", description: "Annex: Conquer the World is a MegaGlest based Indie Game that brings fast paced combat with a diverse arsenal. Play as one of four factions: The East Ocean Alliance, the NEO Republic, the Shadow Organization, or the Renegades as they struggle for dominance all over the world, competeing for a priceless red mineral. The mod will contain 4 factions, over 30 tech trees, original maps, and tileset. Built using open source RTS MegaGlest The focus of the mod is Multiplayer and Single Player skirmishes. Currently, no plans are in place for campaigns or story mode, however this may change once base game is complete.", url: "http://www.annexconquer.com", media: "http://media.indiedb.com/images/games/1/9/8080/Annex_Screen_4.png"
 game1.user = guy
 game1.idea = idea3
@@ -38,3 +67,13 @@ game3 = Game.new title: "Assault Command", summary: "Assault Command is a fast p
 game3.user = guy
 game3.idea = idea3
 game3.save
+
+game4 = Game.new title: "Brave_Battle_Arena", summary: "Unlimited RPG Battle Arena", description: "Assume the role of Akari, a powerful sorceress, as she tackles the trials of the Dark Labyrinth in hopes of fame and riches. This is a class JRPG combat style game, where you and your opponent trade turns using distinct skills till one succeeds, and spoils are taken. This game continues so long as Akari is alive. (Health > 0)", url: "http://ishmaru.github.io/Brave-Battle-Quest/", media: "https://raw.githubusercontent.com/Ishmaru/Brave-Battle-Quest/master/art/bbascreen1.png"
+game4.user = guy2
+game4.idea = idea5
+game4.save
+
+game5 = Game.new title: "Chasm", summary: "Steam Punk RTS!", description: "Steam Punk RTS 2 Full factions! Style is a mix of victorian archutecture, industrial age uniforms, WW2 Tanks, and fantasy airships!", url: "http://annexconquer.com/chasm-announcement/", media: "http://media.moddb.com/images/members/1/487/486330/screen546.jpg"
+game5.user = guy
+game5.idea = idea9
+game5.save

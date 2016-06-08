@@ -1,6 +1,5 @@
 <h3><%= @idea.tag %></h3>
 
-<p><%= @idea.summary %></p>
 <br>
 <p><%= @idea.description %></p>
 <br>
@@ -10,9 +9,9 @@
 <% end %>
 <br>
 <% if current_user %>
-  <%= link_to "Make this a Game!", new_game_path %>
+  <%= link_to "Make this a Game!", new_idea_game_path(@idea) %>
 <% end %>
-<% if current_user == @idea.user_id %>
+<% if session[:user_id] == @idea.user_id %>
   <%= link_to "Update Idea", edit_idea_path(@idea) %>
   <br>
   <%= link_to "Remove Idea", idea_path, method: :delete, data: {confirm: "Remove Game?"} %>
@@ -21,3 +20,4 @@
 <% elsif current_user %>
   <%= link_to "Add your own idea!", new_idea_path %>
 <% end %>
+  <br>

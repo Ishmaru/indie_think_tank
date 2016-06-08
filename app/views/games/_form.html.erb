@@ -1,7 +1,7 @@
   <% @game.errors.full_messages.each do |message| %>
-  <strong><% message %> </strong></p>
+  <p><strong><% message %> </strong></p>
   <% end %>
-  <%= form_for @game do |f| %>
+  <%= form_for @game, url: idea_games_path(@idea), method: :post do |f|%>
     <%= f.label "Game Title: " %>
     <%= f.text_field :title%>
     <br/>

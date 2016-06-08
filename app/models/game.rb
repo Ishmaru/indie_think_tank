@@ -13,6 +13,6 @@ class Game < ActiveRecord::Base
       self.description ||= summary
     end
     def assign_user
-      self.user_id ||= current_user
+      self.user_id ||= session[:user_id]
     end
 end

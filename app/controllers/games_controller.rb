@@ -11,14 +11,16 @@ class GamesController < ApplicationController
   end
 
   def new
-    @game = Game.new
+    @idea = Idea.find(params[:idea_id])
+    @game = @idea.games.new
   end
 
   def create
-    @game = Game.new (game_params)
+    @idea = Idea.find(params[:idea_id])
+    @game = @idea.games.new (game_params)
     if @game.save
       flash[:notice] = "Game added"
-      redirect_to game_path(@game)
+      redirect_to idea_game_path(@idea, @game)
     else
       render 'new'
       # errors.add ("Cannot add user")
@@ -52,5 +54,4 @@ class GamesController < ApplicationController
     def game_params
       params.require(:game).permit(:title, :summary, :description, :url, :media)
     end
-
 end

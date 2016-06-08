@@ -10,7 +10,12 @@
   <%= link_to "#{idea.tag}", user_idea_path(@user, idea)%>
 <% end %>
 <br>
+<% if current_user %>
+  <%= link_to "Add new idea!", new_idea_path %>
+<% end %>
 <br>
-<%= link_to "Remove User", user_path, method: :delete, data: {confirm: "Remove User?"} %>
-<br>
-<%= link_to "Update Profile", edit_user_path(@user) %>
+<footer>
+  <%= link_to "Remove User", user_path, method: :delete, data: {confirm: "Remove User?"} %>
+  <br>
+  <%= link_to "Update Profile", edit_user_path(@user) %>
+</footer>

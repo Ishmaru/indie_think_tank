@@ -6,7 +6,7 @@
 
 <a href="<%= @game.url %>">Download Link</a>
 <br>
-<% if current_user == @game.user_id %>
+<% if session[:user_id] == @game.user_id %>
   <%= link_to "Update Game", edit_game_path(@game) %>
   <br>
   <%= link_to "Remove Game", game_path, method: :delete, data: {confirm: "Remove Game?"} %>
