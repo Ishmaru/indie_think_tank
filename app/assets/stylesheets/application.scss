@@ -16,8 +16,9 @@
  */
 @import "bootstrap-sprockets";
 @import "bootstrap";
+
 body {
-  background-color: #999999;
+  background-color: #ffffff;
 }
 
 .jumbotron {
@@ -82,4 +83,8 @@ margin: 20px;
 
 .vcenter {
   margin-top: 20px;
+}
+
+.idea > h4 {
+  text-align: center;
 }

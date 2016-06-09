@@ -1,12 +1,11 @@
-<div class="page-header block">
-  <h1>Awesome Games!</h1>
+<div class="page-header">
+  <div class="block">
+    <h1>Awesome Games!</h1>
+  </div>
   <div class="sort right">
+    <%= render 'ideas/needidea' %>
     <%= render 'sort' %>
   </div>
 </div>
 <%= render 'gamelist' %>
-<div class="sort">
-  <% if current_user %>
-    <%= link_to "Need an idea?", ideas_path, class: "btn btn-primary" %>
-  <% end %>
-</div>
+<%= render 'ideas/needidea' %>

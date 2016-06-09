@@ -12,6 +12,15 @@
         <p><strong>By: <%= game.user.user_name %></strong><p>
         <strong><%= link_to game.idea.tag, idea_path(game.idea), class: "btn btn-primary" %></strong>
       </div>
+      <% if session[:user_id] == game.user_id %>
+        <div class="block right">
+          <%= link_to "Edit Game", edit_game_path(game), class: "btn btn-primary sort right" %>
+          <br>
+          <%= link_to "Remove Game", game_path(game),class: "btn btn-danger sort right", method: :delete, data: {confirm: "Remove Game?"} %>
+        </div>
+      <% else %>
+          <a href="<%= game.url %>" class= "btn btn-success sort right">Download!</a>
+      <% end %>
     </div>
   <% end %>
 </div>

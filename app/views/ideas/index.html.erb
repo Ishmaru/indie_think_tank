@@ -1,10 +1,11 @@
-<h2>Latest Ideas from our Think Tank!</h2>
-<%= render 'sort' %>
-
+<div class="page-header">
+  <div class="block">
+    <h1>Awesome Ideas!</h1>
+  </div>
+  <div class="sort right">
+    <%= render 'ideas/addidea' %>
+    <%= render 'sort' %>
+ </div>
+</div>
 <%= render 'list' %>
-
-<% if current_user %>
-  <%= link_to "Add a new idea!", new_idea_path, class: "btn btn-primary" %>
-<% else %>
-  <%= link_to 'Log In to add idea!', login_path, class: "btn btn-primary" %>
-<% end %>
+<%= render 'ideas/addidea' %>

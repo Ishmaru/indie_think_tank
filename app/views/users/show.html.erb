@@ -1,6 +1,6 @@
 <div class="page-header">
   <div class="block">
-    <h1><small>Welcome! </small> <%= @user.user_name %></h1>
+    <h1><small>Welcome! </small> <%= @user.user_name %>'s <small>latest contributions:</small> </h1>
   </div>
   <div class="right vcenter">
     <% if session[:user_id] == @user.id %>
@@ -11,19 +11,27 @@
 </div>
 <div class="list-group-item">
   <div class="block">
-    <h2>Your Awesome Games!</h2>
+    <h2><%= @user.user_name %>'s Awesome Games!</h2>
   </div>
-  <%= link_to "Need an idea?", ideas_path, class: "btn btn-primary sort right" %>
+    <div class="sort right">
+      <%= render 'ideas/needidea' %>
+    </div>
+      <% if @user.games.length == 0 %>
+        <p><%= @user.user_name %> doesen't have any games yet :'(</p>
+      <% end %>
 </div>
 <br>
 <%= render 'games/gamelist' %>
 <br>
 <div class="list-group-item">
   <div class="block">
-    <h2>Your Awesome Ideas!</h2>
+    <h2><%= @user.user_name %>'s Awesome Ideas!</h2>
   </div>
-  <% if current_user %>
-    <%= link_to "Add new idea!", new_idea_path, class: "btn btn-primary sort right" %>
-  <% end %>
+  <div class="sort right">
+    <%= render 'ideas/addidea' %>
+  </div>
+      <% if @user.ideas.length == 0 %>
+        <p><%= @user.user_name %> Haven't given ideas yet :'(</p>
+      <% end %>
 </div>
 <%= render 'ideas/list' %>

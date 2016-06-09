@@ -1,0 +1,22 @@
+<p>
+  <%= link_to 'Home', root_path %>
+  &nbsp;&nbsp;|&nbsp;&nbsp;
+  <%= link_to 'All Ideas', ideas_path %>
+  &nbsp;&nbsp;|&nbsp;&nbsp;
+  <%= link_to 'All Games', games_path %>
+  &nbsp;&nbsp;|&nbsp;&nbsp;
+  <%= link_to 'Participate', home_about_path %>
+  &nbsp;&nbsp;|&nbsp;&nbsp;
+  <% if current_user %>
+    Welcome, <%= current_user.user_name %>
+    &nbsp;&nbsp;|&nbsp;&nbsp;
+    <%= link_to 'Your Profile', user_path(current_user.id) %>
+    &nbsp;&nbsp;|&nbsp;&nbsp;
+    <%= link_to 'Log Out', session_path('dummy'), method: :delete %>
+    &nbsp;&nbsp;|&nbsp;&nbsp;
+  <% else %>
+    <%= link_to 'Log In', login_path %>
+    &nbsp;&nbsp;|&nbsp;&nbsp;
+    <%= link_to 'Sign Up', new_user_path %>
+  <% end %>
+</p>
