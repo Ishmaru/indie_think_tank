@@ -1,5 +1,5 @@
 <% if current_user %>
   <%= link_to "Add a new idea!", new_idea_path, class: "btn btn-success" %>
 <% else %>
-  <%= link_to 'Log In to add idea!', login_path, class: "btn btn-success" %>
+  <%= link_to 'Log In to add idea!', login_path, class: "btn btn-primary" %>
 <% end %>

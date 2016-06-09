@@ -1,0 +1,5 @@
+<% if current_user %>
+  <%= link_to "Make this a Game!", new_idea_game_path(@idea), class: "btn btn-success" %>
+<% else %>
+  <%= link_to 'Log In to add game!', login_path, class: "btn btn-primary" %>
+<% end %>
