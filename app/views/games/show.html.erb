@@ -1,14 +1,32 @@
-<h3><%= @game.title %></h3>
-<br>
-<img src="<%= @game.media %>" alt="<%= @game.title %>" height="400" width="640">
-<br>
-<h4>Idea:</h4>
-<strong><%= link_to @game.idea.tag, idea_path(@game.idea) %></strong> summary: <%= @game.idea.summary %>
-<h4>Description</h4>
-<p><%= @game.description %></p>
-<h4>Play the Game!</h4>
-<a href="<%= @game.url %>" class= "btn btn-success">Download Link</a>
-<% if session[:user_id] == @game.user_id %>
-  <%= link_to "Update Game", edit_game_path(@game), class: "btn btn-primary" %>
-  <%= link_to "Remove Game", game_path,class: "btn btn-danger", method: :delete, data: {confirm: "Remove Game?"} %>
-<% end %>
+<div class="page-header">
+  <h1><%= @game.title %> <small> <%= @game.summary %></small></h1>
+</div>
+<div class="ideas list-group-item">
+  <img class="freeimg" src="<%= @game.media %>" alt="<%= @game.title %>" height="400" width="640">
+</div>
+<div class="gameinfo list-group-item">
+  <div class="info list-group-item">
+    <div class="ideas block">
+      <h4>Creator:</h4>
+      <p><%= link_to @game.user.user_name, user_path(@game.user), class: "btn btn-primary sort" %></p>
+    </div>
+    <div class="ideas block">
+      <h4>Origin Idea:</h4>
+      <strong><%= link_to @game.idea.tag, idea_path(@game.idea), class: "btn btn-primary sort"  %></strong> Summary: <%= @game.idea.summary %>
+    </div>
+    <div class="ideas block">
+      <h4>Play the Game!</h4>
+      <a href="<%= @game.url %>" class= "btn btn-success sort">Download Link</a>
+    </div>
+  </div>
+  <div class="ideas list-group-item">
+    <h4>Description</h4>
+    <p><%= @game.description %></p>
+  </div>
+      <% if session[:user_id] == @game.user_id %>
+        <div class="ideas list-group-item">
+          <%= link_to "Update Game", edit_game_path(@game), class: "btn btn-primary sort" %>
+          <%= link_to "Remove Game", game_path,class: "btn btn-danger sort", method: :delete, data: {confirm: "Remove Game?"} %>
+       </div>
+      <% end %>
+</div>

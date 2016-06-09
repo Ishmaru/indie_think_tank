@@ -1,11 +1,8 @@
 <h2>Latest Ideas from our Think Tank!</h2>
 <%= render 'sort' %>
-<% @ideas.each do |idea| %>
-  <li class="list-group-item">
-    <strong><%= link_to idea.tag, idea_path(idea), class: "btn btn-primary" %></strong> summary: <%= idea.summary %>
-  </li>
-<% end %>
-<br>
+
+<%= render 'list' %>
+
 <% if current_user %>
   <%= link_to "Add a new idea!", new_idea_path, class: "btn btn-primary" %>
 <% else %>

@@ -5,7 +5,7 @@ class GamesController < ApplicationController
     @sort_by = params[:sort_by]
     if @sort_by == 'tag'
       @games = Game.order(:idea_id)
-    elsif @sort_by == 'old'
+    elsif @sort_by == 'new'
       @games = Game.order(created_at: :desc)
     else
       @games = Game.order(:created_at)

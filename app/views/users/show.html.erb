@@ -1,23 +1,29 @@
-<h1>Welcome! <%= @user.user_name %></h1>
-<h3>Your Awesome Contributions!</h3>
-<% @games.each do |game| %>
-  <img src="<%= game.media %>" alt="<%= game.title %>" height="200" width="320">
-  <%= link_to "#{game.title}", user_game_path(@user, game)%>
-<% end %>
-<%= link_to "Need an idea?", ideas_path, class: "btn btn-primary" %>
-
+<div class="page-header">
+  <div class="block">
+    <h1><small>Welcome! </small> <%= @user.user_name %></h1>
+  </div>
+  <div class="right vcenter">
+    <% if session[:user_id] == @user.id %>
+      <%= link_to "Update Profile", edit_user_path(@user), class: "btn btn-primary" %>
+      <%= link_to "Remove User", user_path, class: "btn btn-danger", method: :delete, data: {confirm: "Remove User?"} %>
+    <% end %>
+  </div>
+</div>
+<div class="list-group-item">
+  <div class="block">
+    <h2>Your Awesome Games!</h2>
+  </div>
+  <%= link_to "Need an idea?", ideas_path, class: "btn btn-primary sort right" %>
+</div>
 <br>
-<h3>Your Awesome Ideas!</h3>
-<% @ideas.each do |idea| %>
-<li>
-  <%= link_to "#{idea.tag}", user_idea_path(@user, idea) %>
-</li>
-<% end %>
+<%= render 'games/gamelist' %>
 <br>
-<% if current_user %>
-  <%= link_to "Add new idea!", new_idea_path, class: "btn btn-primary" %>
-<% end %>
-<footer>
-  <%= link_to "Update Profile", edit_user_path(@user), class: "btn btn-primary" %>
-  <%= link_to "Remove User", user_path, class: "btn btn-danger", method: :delete, data: {confirm: "Remove User?"} %>
-</footer>
+<div class="list-group-item">
+  <div class="block">
+    <h2>Your Awesome Ideas!</h2>
+  </div>
+  <% if current_user %>
+    <%= link_to "Add new idea!", new_idea_path, class: "btn btn-primary sort right" %>
+  <% end %>
+</div>
+<%= render 'ideas/list' %>

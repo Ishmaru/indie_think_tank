@@ -1,22 +1,12 @@
-<h2>Try these Awesome games!</h2>
-<%= render 'sort' %>
-<ul class="media-list">
-<% @games.each do |game| %>
-  <li class="media">
-    <div class="media-left">
-      <a href="<%= game_path(game) %>">
-        <img class="media-object" src="<%= game.media %>" alt="<%= game.title %>" height="100" width="160">
-      </a>
-    </div>
-    <div class="media-body">
-      <h3 class="media-heading"><%= link_to game.title,  game_path(game) %></h3>
-       summary: <%= game.summary %>
-    </div>
-  </li>
-<% end %>
-</ul>
-
-<% if current_user %>
-  <%= link_to "Need an idea?", ideas_path, class: "btn btn-primary" %>
-<% end %>
-
+<div class="page-header block">
+  <h1>Awesome Games!</h1>
+  <div class="sort right">
+    <%= render 'sort' %>
+  </div>
+</div>
+<%= render 'gamelist' %>
+<div class="sort">
+  <% if current_user %>
+    <%= link_to "Need an idea?", ideas_path, class: "btn btn-primary" %>
+  <% end %>
+</div>

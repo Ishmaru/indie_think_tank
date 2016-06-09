@@ -16,18 +16,70 @@
  */
 @import "bootstrap-sprockets";
 @import "bootstrap";
+body {
+  background-color: #999999;
+}
 
 .jumbotron {
   background-size: 100%;
   height: 300px;
 }
 
-.jumbotron > h3{
-  color: white;
-  padding-top: 60px;
+.page-header > h1 {
+  font-size: 3em;
 }
 
-.jumbotron > h2{
+.jumbotron > h4{
   color: white;
-  padding-top: 10px;
+  padding-top: 40px;
+}
+
+.jumbotron > h1 {
+  color: white;
+  font-size: 4em;
+
+}
+
+.jumbotron > small{
+  font-size: 2em;
+}
+
+.media-left {
+  display: inline-block;
+}
+
+.media {
+  margin-top: 20px;
+}
+
+.media-body {
+  display: inline-block;
+  margin-left: 100px;
+  margin-top: 10px;
+}
+
+.sort {
+margin: 20px;
+}
+
+.freeimg {
+  text-align: center;
+}
+
+.block {
+  display: inline-block;
+}
+
+.block > h1 {
+  display: inline-block;
+  font-size: 3em;
+}
+
+.right {
+  display: inline-block;
+  float: right;
+}
+
+.vcenter {
+  margin-top: 20px;
 }

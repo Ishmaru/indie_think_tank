@@ -1,14 +1,15 @@
 <div class="page-header">
-  <h1>Indie Think Tank <small>"Connecting people with game ideas, to those who can make it happen!"</small></h1>
+  <h1>Indie Think Tank <small>"Connecting game ideas, to those who can make it happen!"</small></h1>
 </div>
 <div class="jumbotron">
-  <h2><%= @game.title %></h2>
-  <style media="screen">
+  <h1><%= @game.title %></h1>
+  <style>
     .jumbotron { background-image: url(<%= @game.media %>); }
   </style>
-  <h3><%= @game.summary %></h3>
+  <h4><%= @game.summary %></h4>
+  <%= link_to "Read More!", game_path(@game), class: "btn btn-primary sort" %>
 </div>
-<h3><%= link_to "Games Listings", games_path %></h3>
+<h3><%= link_to "Latest Games:", games_path %></h3>
 <div class="row">
     <% @games.each do |game| %>
     <div class="col-sm-6 col-md-4">
@@ -22,10 +23,5 @@
     </div>
     <% end %>
 </div>
-<h3><%= link_to "Ideas Listings", ideas_path %></h3>
-<% @ideas.each do |idea| %>
-  <li class="list-group-item">
-    <strong><%= link_to idea.tag, idea_path(idea) %></strong> summary: <%= idea.summary %>
-  </li>
-<% end %>
-
+<h3><%= link_to "Latest Ideas:", ideas_path %></h3>
+<%= render 'ideas/list' %>

@@ -4,7 +4,7 @@ class IdeasController < ApplicationController
     @sort_by = params[:sort_by]
     if @sort_by == 'tag'
       @ideas = Idea.order(:tag)
-    elsif @sort_by == 'old'
+    elsif @sort_by == 'new'
       @ideas = Idea.order(created_at: :desc)
     else
       @ideas = Idea.order(:created_at)

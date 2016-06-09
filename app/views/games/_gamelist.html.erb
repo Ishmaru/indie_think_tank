@@ -1,0 +1,17 @@
+<div class="list-helper">
+  <% @games.each do |game| %>
+    <div class="media list-group-item">
+      <div class="media-left">
+        <a href="<%= game_path(game) %>">
+          <img class="media-object" src="<%= game.media %>" alt="<%= game.title %>" height="150" width="150">
+        </a>
+      </div>
+      <div class="media-body">
+        <h4 class="media-heading"><%= game.title %></h4>
+        <p><%= game.summary %><p>
+        <p><strong>By: <%= game.user.user_name %></strong><p>
+        <strong><%= link_to game.idea.tag, idea_path(game.idea), class: "btn btn-primary" %></strong>
+      </div>
+    </div>
+  <% end %>
+</div>

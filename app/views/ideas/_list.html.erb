@@ -1,0 +1,5 @@
+<% @ideas.each do |idea| %>
+  <li class="list-group-item">
+    <strong><%= link_to idea.tag, idea_path(idea), class: "btn btn-primary" %> posted by: <%= idea.user.user_name %></strong> summary: <%= idea.summary %>
+  </li>
+<% end %>
