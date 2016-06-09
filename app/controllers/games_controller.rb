@@ -1,7 +1,15 @@
 class GamesController < ApplicationController
   before_action :authorize, except: [:index, :show]
+
   def index
-    @games = Game.all
+    @sort_by = params[:sort_by]
+    if @sort_by == 'tag'
+      @games = Game.order(:idea_id)
+    elsif @sort_by == 'old'
+      @games = Game.order(created_at: :desc)
+    else
+      @games = Game.order(:created_at)
+    end
   end
 
   def show

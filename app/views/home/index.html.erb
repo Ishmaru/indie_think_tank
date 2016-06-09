@@ -1,15 +1,31 @@
-<h1>Indie Think Tank</h1>
-<h4>"Connecting people with game ideas, to those who can make it happen!"</h4>
+<div class="page-header">
+  <h1>Indie Think Tank <small>"Connecting people with game ideas, to those who can make it happen!"</small></h1>
+</div>
+<div class="jumbotron">
+  <h2><%= @game.title %></h2>
+  <style media="screen">
+    .jumbotron { background-image: url(<%= @game.media %>); }
+  </style>
+  <h3><%= @game.summary %></h3>
+</div>
 <h3><%= link_to "Games Listings", games_path %></h3>
-<% @games.each do |game| %>
-  <li>
-    <img src="<%= game.media %>" alt="<%= game.title %>" height="200" width="320">
-    <strong><%= link_to game.title,  game_path(game) %></strong> summary: <%= game.summary %>
-  </li>
-<% end %>
+<div class="row">
+    <% @games.each do |game| %>
+    <div class="col-sm-6 col-md-4">
+      <div class="thumbnail">
+        <img src="<%= game.media %>" alt="<%= game.title %>">
+        <div class="caption">
+          <h3><%= link_to game.title,  game_path(game) %></h3>
+          <p><%= game.summary %></p>
+        </div>
+      </div>
+    </div>
+    <% end %>
+</div>
 <h3><%= link_to "Ideas Listings", ideas_path %></h3>
 <% @ideas.each do |idea| %>
-  <li>
+  <li class="list-group-item">
     <strong><%= link_to idea.tag, idea_path(idea) %></strong> summary: <%= idea.summary %>
   </li>
 <% end %>
+

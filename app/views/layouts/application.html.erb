@@ -7,42 +7,46 @@
   <%= csrf_meta_tags %>
 </head>
 <body>
-<header>
-  <div class="header">
-    <p>
-      <%= link_to 'Home', root_path %>
-      &nbsp;&nbsp;|&nbsp;&nbsp;
-      <%= link_to 'All Ideas', ideas_path %>
-      &nbsp;&nbsp;|&nbsp;&nbsp;
-      <%= link_to 'All Games', games_path %>
-      &nbsp;&nbsp;|&nbsp;&nbsp;
-      <%= link_to 'Participate', home_about_path %>
-      &nbsp;&nbsp;|&nbsp;&nbsp;
-      <% if current_user %>
-        Welcome, <%= current_user.user_name %>
-        &nbsp;&nbsp;|&nbsp;&nbsp;
-        <%= link_to 'Your Profile', user_path(current_user.id) %>
-        &nbsp;&nbsp;|&nbsp;&nbsp;
-        <%= link_to 'Log Out', session_path('dummy'), method: :delete %>
-        &nbsp;&nbsp;|&nbsp;&nbsp;
-      <% else %>
-        <%= link_to 'Log In', login_path %>
-        &nbsp;&nbsp;|&nbsp;&nbsp;
-        <%= link_to 'Sign Up', new_user_path %>
-      <% end %>
-    </p>
-  </div>
-</header>
-
   <div class="container">
-    <% flash.each do |type, message| %>
-      <p class="flash <%= type.to_s %>"><%= message %></p>
-    <% end %>
+    <header>
+      <div class="header">
+        <p>
+          <%= link_to 'Home', root_path %>
+          &nbsp;&nbsp;|&nbsp;&nbsp;
+          <%= link_to 'All Ideas', ideas_path %>
+          &nbsp;&nbsp;|&nbsp;&nbsp;
+          <%= link_to 'All Games', games_path %>
+          &nbsp;&nbsp;|&nbsp;&nbsp;
+          <%= link_to 'Participate', home_about_path %>
+          &nbsp;&nbsp;|&nbsp;&nbsp;
+          <% if current_user %>
+            Welcome, <%= current_user.user_name %>
+            &nbsp;&nbsp;|&nbsp;&nbsp;
+            <%= link_to 'Your Profile', user_path(current_user.id) %>
+            &nbsp;&nbsp;|&nbsp;&nbsp;
+            <%= link_to 'Log Out', session_path('dummy'), method: :delete %>
+            &nbsp;&nbsp;|&nbsp;&nbsp;
+          <% else %>
+            <%= link_to 'Log In', login_path %>
+            &nbsp;&nbsp;|&nbsp;&nbsp;
+            <%= link_to 'Sign Up', new_user_path %>
+          <% end %>
+        </p>
+      </div>
+    </header>
+
+      <div class="container">
+        <% flash.each do |type, message| %>
+          <p class="flash <%= type.to_s %>"><%= message %></p>
+        <% end %>
+      </div>
+
+    <%= yield %>
+    <footer>
+
+    </footer>
+    <br>
+    <br>
   </div>
-
-<%= yield %>
-<footer>
-
-</footer>
 </body>
 </html>

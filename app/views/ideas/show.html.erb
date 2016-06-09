@@ -1,5 +1,4 @@
 <h3><%= @idea.tag %></h3>
-
 <br>
 <p><%= @idea.description %></p>
 <br>
@@ -7,6 +6,9 @@
 <% @games.each do |game| %>
   <img src="<%= game.media %>" alt="<%= game.title %>" height="200" width="320">
   <%= link_to "#{game.title}", idea_game_path(@idea, game)%>
+<% end %>
+<% if @games.count == 0 %>
+  <p>No games yet.</p>
 <% end %>
 <br>
 <% if current_user %>
@@ -18,5 +20,7 @@
   <%= link_to "Remove Idea", idea_path, class: "btn btn-danger", method: :delete, data: {confirm: "Remove Game?"} %>
 <% elsif current_user %>
   <%= link_to "Add your own idea!", new_idea_path, class: "btn btn-primary" %>
+<% else %>
+  <%= link_to 'Log In to Add Game!', login_path, class: "btn btn-primary" %>
 <% end %>
 

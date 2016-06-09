@@ -49,9 +49,29 @@ idea8 = Idea.new tag: "Table", summary: "Virtual Tic Tac Toe"
 idea8.user = guy3
 idea8.save
 
-idea9 = Idea.new tag: "RTS", summary: "We want some steam punk!", description: "Chasm is base in a Fantasy World War 2 world. The powerful Republic of Cruix launched a war of conquest against the world and the only nation able to withstand the onslaught is the wealthy Kindom of Alandia. This game is focused on simple custom deathmatch style battle. There are no Campaigns, Scenarios, or Multiplayer in this game. Still Chasm boasts higher resolution models and textures and still a lot of fun!"
+idea9 = Idea.new tag: "RTS", summary: "We want some steam punk!", description: "Tanks, Rifles, Knights, and Castles. Things you would normally not see in one setting. I wish there were more steam punk style games, especially strategy games!"
 idea9.user = girl
 idea9.save
+
+idea10 = Idea.new tag: "Action", summary: "One button fighting game", description: "Whenever I play fighting games, all I know is to press every button as fast as I can. Some games I win most I don't. Can you make one thats only one button? "
+idea10.user = guy3
+idea10.save
+
+idea11 = Idea.new tag: "Action", summary: "First person shooter Chess!", description: "Chess is boring it would be more fun to run around and shoot everything!"
+idea11.user = guy2
+idea11.save
+
+idea12 = Idea.new tag: "Simulation", summary: "Music as a game", description: "I want to see a game thats about generating experences through sound effects"
+idea12.user = girl2
+idea12.save
+
+idea13 = Idea.new tag: "Simulation", summary: "The daily life of a Garbage Man", description: "I want a releastic representation of the life of a sanitation worker, working his way up the corperate ladder."
+idea13.user = guy3
+idea13.save
+
+idea14 = Idea.new tag: "Action", summary: "Make Half Life 3", description: "We have waited long enough Valve, if your not going to do it sombody should!"
+idea14.user = guy3
+idea14.save
 
 game1 = Game.new title: "Annex: Conquer the World", summary: "Annex is a fast paced RTS game with Anime themed characters.", description: "Annex: Conquer the World is a MegaGlest based Indie Game that brings fast paced combat with a diverse arsenal. Play as one of four factions: The East Ocean Alliance, the NEO Republic, the Shadow Organization, or the Renegades as they struggle for dominance all over the world, competeing for a priceless red mineral. The mod will contain 4 factions, over 30 tech trees, original maps, and tileset. Built using open source RTS MegaGlest The focus of the mod is Multiplayer and Single Player skirmishes. Currently, no plans are in place for campaigns or story mode, however this may change once base game is complete.", url: "http://www.annexconquer.com", media: "http://media.indiedb.com/images/games/1/9/8080/Annex_Screen_4.png"
 game1.user = guy

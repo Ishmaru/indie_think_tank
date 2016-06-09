@@ -1,8 +1,10 @@
 class HomeController < ApplicationController
 
   def index
-    @games = Game.all
-    @ideas = Idea.all
+    # limit number of shown instances
+    @game = Game.first
+    @games = Game.last(3)
+    @ideas = Idea.first(6)
   end
 
   def about
