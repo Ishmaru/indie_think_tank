@@ -3,19 +3,22 @@
 <% end %>
 <%= form_for [@idea] do |f|%>
 <div class="row">
+  <div class="field col-md-1">
+  </div>
   <div class="field col-md-4">
     <%= f.text_field :tag, class: "form-control", placeholder: "Type Tag" %>
   </div>
-</div>
-<br>
-  <div class="row">
-    <div class="field col-md-12">
-      <%= f.text_field :summary, class: "form-control", placeholder: "Short Summary" %>
-    </div>
+  <div class="field col-md-1">
+  </div>
+  <div class="field col-md-5">
+    <%= f.text_field :summary, class: "form-control", placeholder: "Short Summary" %>
+  </div>
   </div>
   <br>
   <div class="row">
-    <div class="field col-md-12">
+    <div class="field col-md-1">
+    </div>
+    <div class="field col-md-10">
       <%= f.text_field :description, class: "form-control form-control-lg", placeholder: "Description" %>
     </div>
   </div>
@@ -27,3 +30,5 @@
   <%= link_to 'back', ideas_path, class: "btn btn-primary sort right" %>
   <% end %>
 </div>
+<br>
+<br>

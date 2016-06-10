@@ -1,15 +1,15 @@
-<div class="page-header">
+<div class="page-header blackbg">
   <h1 class="block"><%= @idea.tag %> <small> <%= @idea.summary %></small></h1>
   <div class="right">
-    <span class="badge right sort vcenter"><%= @idea.likes.count %></span>
+    <span class="badge right sort vcenter">Likes: <%= @idea.likes.count %></span>
     <%= link_to "Like?", like_idea_path(@idea), class:"btn btn-s btn-success sort right" if current_user && !@idea.likes.find_by(user_id: current_user.id) %>
   </div>
 </div>
-<div class="page-header">
+<div class="page-header blackbg">
   <h2>Idea Description:</h2>
   <h5><%= @idea.description %></h5>
 </div>
-<div>
+<div class="blackbg">
   <h2 class="block">Games from this idea:</h2>
   <div class="sort right">
     <%= render 'makegame' %>
@@ -22,6 +22,7 @@
     <p>No games yet.</p>
   <% end %>
 </div>
+<br>
 <%= render 'makegame' %>
 <%= render 'addidea' %>
 <% if session[:user_id] == @idea.user_id %>

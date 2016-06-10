@@ -1,6 +1,6 @@
-<div class="page-header">
+<div class="page-header blackbg">
   <div class="block">
-    <h1><small>Welcome! </small> <%= @user.user_name %>'s <small>latest contributions:</small> </h1>
+    <h1><small>Welcome! </small> <%= @user.user_name %>'s <small>Latest Contributions:</small> </h1>
   </div>
   <div class="right vcenter">
     <% if session[:user_id] == @user.id %>
@@ -9,8 +9,8 @@
     <% end %>
   </div>
 </div>
-<div>
-  <div class="block blackbg">
+<div class="blackbg">
+  <div class="block">
     <h2><%= @user.user_name %>'s Awesome Games!</h2>
   </div>
     <div class="sort right">
@@ -23,8 +23,8 @@
 <br>
 <%= render 'games/gamelist' %>
 <br>
-<div>
-  <div class="block blackbg">
+<div class="blackbg">
+  <div class="block">
     <h2><%= @user.user_name %>'s Awesome Ideas!</h2>
   </div>
   <div class="sort right">

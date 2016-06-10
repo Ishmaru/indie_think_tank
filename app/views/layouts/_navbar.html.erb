@@ -16,7 +16,6 @@
       <%= link_to 'Your Profile', user_path(current_user.id) %>
       &nbsp;&nbsp;|&nbsp;&nbsp;
       <%= link_to 'Log Out', session_path('dummy'), method: :delete %>
-      &nbsp;&nbsp;|&nbsp;&nbsp;
     <% else %>
       <%= link_to 'Log In', login_path %>
       &nbsp;&nbsp;|&nbsp;&nbsp;
