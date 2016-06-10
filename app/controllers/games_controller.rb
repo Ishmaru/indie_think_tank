@@ -20,12 +20,13 @@ class GamesController < ApplicationController
 
   def new
     @idea = Idea.find(params[:idea_id])
-    @game = @idea.games.new
+    @game = Game.new
   end
 
   def create
     @idea = Idea.find(params[:idea_id])
-    @game = @idea.games.new (game_params)
+    @game = Game.new (game_params)
+    @game.idea = @idea
     @game.user = current_user
     if @game.save
       flash[:notice] = "Game added"

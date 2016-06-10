@@ -1,5 +1,9 @@
 <div class="page-header">
   <h1><%= @idea.tag %> <small> <%= @idea.summary %></small></h1>
+  <div class="right">
+    <span class="badge right sort"><%= @idea.likes.count %></span>
+    <%= link_to "Like?", like_idea_path(@idea), class:"btn btn-s btn-info sort right" if current_user && !@idea.likes.find_by(user_id: current_user.id) %>
+  </div>
 </div>
 <div class="page-header">
   <h2>Idea Description:</h2>

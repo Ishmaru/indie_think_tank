@@ -5,7 +5,7 @@ class IdeasController < ApplicationController
     if @sort_by == 'tag'
       @ideas = Idea.order(:tag)
     elsif @sort_by == 'new'
-      @ideas = Idea.order(created_at: :desc)
+      @ideas = Idea.all.sort_by { |idea| idea.likes.count }.reverse
     else
       @ideas = Idea.order(:created_at)
     end
@@ -49,13 +49,18 @@ class IdeasController < ApplicationController
     end
   end
 
- def destroy
+  def destroy
     @idea = Idea.find(params[:id])
     @idea.destroy
     flash[:notice] = "Idea Removed."
     redirect_to root_path
   end
 
+  def like
+    @idea = Idea.find(params[:id])
+    Like.create(user: current_user, idea: @idea) unless Like.find_by(user: current_user, idea: @idea)
+    redirect_to(:back)
+  end
 
   private
     def idea_params

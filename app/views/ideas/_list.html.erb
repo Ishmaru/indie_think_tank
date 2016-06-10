@@ -1,6 +1,7 @@
 <% @ideas.each do |idea| %>
   <li class="list-group-item">
     <strong><%= link_to idea.tag, idea_path(idea), class: "btn btn-primary" %> posted by: <%= idea.user.user_name %></strong> summary: <%= idea.summary %>
+      <span class="badge"><%= idea.likes.count %></span>
       <% if session[:user_id] == idea.user_id %>
         <div class="block right">
           <%= link_to "Remove Game", idea_path(idea),class: "btn btn-danger right", method: :delete, data: {confirm: "Remove Idea?"} %>
