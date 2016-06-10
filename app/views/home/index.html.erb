@@ -10,6 +10,7 @@
   <%= link_to "Read More!", game_path(@game), class: "btn btn-primary sort" %>
 </div>
 <h3><%= link_to "Latest Games:", games_path %></h3>
+<div class="list-group-item">
 <div class="row">
     <% @games.each do |game| %>
     <div class="col-sm-6 col-md-4">
@@ -23,5 +24,7 @@
     </div>
     <% end %>
 </div>
+</div>
 <h3><%= link_to "Latest Ideas:", ideas_path %></h3>
+<br>
 <%= render 'ideas/list' %>

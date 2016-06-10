@@ -4,9 +4,11 @@
       <span class="badge"><%= idea.likes.count %></span>
       <% if session[:user_id] == idea.user_id %>
         <div class="block right">
-          <%= link_to "Remove Game", idea_path(idea),class: "btn btn-danger right", method: :delete, data: {confirm: "Remove Idea?"} %>
-          <%= link_to "Edit Game", edit_idea_path(idea), class: "btn btn-primary right" %>
+          <%= link_to "Remove Idea", idea_path(idea),class: "btn btn-danger right nbsp", method: :delete, data: {confirm: "Remove Idea?"} %>
+          <%= link_to "Edit Idea", edit_idea_path(idea), class: "btn btn-success right nbsp" %>
         </div>
+      <% else %>
+          <%= link_to "View Idea", idea_path(idea), class: "btn btn-primary right nbsp" %>
       <% end %>
   </li>
 <% end %>

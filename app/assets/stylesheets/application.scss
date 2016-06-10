@@ -1,24 +1,14 @@
-/*
- * This is a manifest file that'll be compiled into application.css, which will include all the files
- * listed below.
- *
- * Any CSS and SCSS file within this directory, lib/assets/stylesheets, vendor/assets/stylesheets,
- * or any plugin's vendor/assets/stylesheets directory can be referenced here using a relative path.
- *
- * You're free to add application-wide styles to this file and they'll appear at the bottom of the
- * compiled file so the styles you add here take precedence over styles defined in any styles
- * defined in the other CSS/SCSS files in this directory. It is generally better to create a new
- * file per style scope.
- *
- *= require_tree .
- *= require rails_bootstrap_forms
- *= require_self
- */
 @import "bootstrap-sprockets";
 @import "bootstrap";
 
+* {
+}
+
 body {
-  background-color: #ffffff;
+  background-image: url("http://www.techcredo.com/wp-content/uploads/2012/11/retro-8-bit-pixelart-wallpapers-20.gif");
+  background-size: 100%;
+  background-repeat: no-repeat;
+  background-attachment: fixed;
 }
 
 .jumbotron {
@@ -81,10 +71,6 @@ margin: 20px;
   float: right;
 }
 
-.vcenter {
-  margin-top: 20px;
-}
-
 .idea > h4 {
   text-align: center;
 }
@@ -97,5 +83,50 @@ margin: 20px;
   width: 50%;
   margin-top: 50px;
   margin-bottom: 50px;
+}
 
+.nbsp {
+  margin-right: 4px;
+}
+
+.badge {
+  margin: 5px;
+}
+
+.vcenter {
+  margin-top: 20px;
+}
+
+p, h1, h2, h3, h4, h5, h6, .list-group-item, .nav {
+  color: #21F36B;
+}
+
+p, h6, h5, h4, h1 small, strong {
+  color: #E6E6E6;
+}
+
+a {
+  color: #4EB3FF;
+}
+
+.list-group-item, {
+  background-color: rgba(96, 125, 139, 0.59);
+}
+
+.list-group-item, .thumbnail, .page-header {
+  border-color: #21F36B;
+}
+
+.thumbnail {
+  background-color: rgba(33, 150, 243, 0.21);
+}
+
+.blackbg {
+  background-color: rgba(5, 5, 5, 0.50);
+
+}
+
+.head {
+  text-align: center;
+  font-size: 1.2em;
 }

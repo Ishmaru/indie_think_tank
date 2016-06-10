@@ -14,9 +14,9 @@
       </div>
     </header>
 
-      <div class="container">
+      <div class="alert alert_dager" role="alert">
         <% flash.each do |type, message| %>
-          <p class="flash <%= type.to_s %>"><%= message %></p>
+          <p class="flash <%= type.to_s %> alert alert_danger"><%= message %></p>
         <% end %>
       </div>
 

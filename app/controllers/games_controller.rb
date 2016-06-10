@@ -2,6 +2,8 @@ class GamesController < ApplicationController
   before_action :authorize, except: [:index, :show]
 
   def index
+    # sorts index by params passed in url see _sort.html
+    # No likes for games so .order was sufficient for all
     @sort_by = params[:sort_by]
     if @sort_by == 'tag'
       @games = Game.order(:idea_id)
@@ -33,7 +35,6 @@ class GamesController < ApplicationController
       redirect_to idea_game_path(@idea, @game)
     else
       render 'new'
-      # errors.add ("Cannot add user")
     end
   end
 
@@ -49,7 +50,6 @@ class GamesController < ApplicationController
       redirect_to game_path(@game)
     else
       render 'edit'
-      # errors.add ("Cannot update user")
     end
   end
 

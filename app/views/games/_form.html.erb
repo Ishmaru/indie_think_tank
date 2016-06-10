@@ -1,5 +1,5 @@
 <% @game.errors.full_messages.each do |message| %>
-  <p><strong><% message %> </strong></p>
+  <div class="alert alert-danger" role="alert"><strong><% message %></strong></div>
 <% end %>
 <%= form_for [@idea, @game] do |f|%>
   <div class="row">

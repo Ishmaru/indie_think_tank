@@ -9,8 +9,8 @@
     <% end %>
   </div>
 </div>
-<div class="list-group-item">
-  <div class="block">
+<div>
+  <div class="block blackbg">
     <h2><%= @user.user_name %>'s Awesome Games!</h2>
   </div>
     <div class="sort right">
@@ -23,15 +23,18 @@
 <br>
 <%= render 'games/gamelist' %>
 <br>
-<div class="list-group-item">
-  <div class="block">
+<div>
+  <div class="block blackbg">
     <h2><%= @user.user_name %>'s Awesome Ideas!</h2>
   </div>
   <div class="sort right">
     <%= render 'ideas/addidea' %>
   </div>
-      <% if @user.ideas.length == 0 %>
-        <p><%= @user.user_name %> Haven't given ideas yet :'(</p>
-      <% end %>
 </div>
+<br>
+<% if @user.ideas.length == 0 %>
+  <div class="list-group-item">
+    <p><%= @user.user_name %> Haven't given ideas yet :'(</p>
+  </div>
+<% end %>
 <%= render 'ideas/list' %>

@@ -7,6 +7,7 @@ class User < ActiveRecord::Base
   before_save :default_user_name
   private
     def default_user_name
-      self.user_name ||= "Anonymous"
+      # In the case of no user_name given, user_name is set to the email.
+      self.user_name ||= email
     end
 end

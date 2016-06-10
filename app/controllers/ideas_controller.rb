@@ -1,6 +1,8 @@
 class IdeasController < ApplicationController
   before_action :authorize, except: [:index, :show]
   def index
+    # sorts index by params passed in url see _sort.html
+    # sorting by number of likes wasn't possibe with a .order in this fasion so .sort_by{}.reverse was used instead. (thanks Jim)
     @sort_by = params[:sort_by]
     if @sort_by == 'tag'
       @ideas = Idea.order(:tag)
@@ -31,7 +33,6 @@ class IdeasController < ApplicationController
       redirect_to idea_path(@idea)
     else
       render 'new'
-      # errors.add ("Cannot add user")
     end
   end
 
@@ -47,7 +48,6 @@ class IdeasController < ApplicationController
       redirect_to idea_path(@idea)
     else
       render 'edit'
-      # errors.add ("Cannot update user")
     end
   end
 
@@ -59,6 +59,7 @@ class IdeasController < ApplicationController
   end
 
   def like
+    # Instead of creating a full Likes Controller, We'll define a "like" method here, and a small inline if in the ideas show route (thanks Jim)
     @idea = Idea.find(params[:id])
     Like.create(user: current_user, idea: @idea) unless Like.find_by(user: current_user, idea: @idea)
     redirect_to(:back)
