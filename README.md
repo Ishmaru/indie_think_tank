@@ -1,4 +1,8 @@
 # Indie Think Tank!
+
+#### Find it here:
+https://whispering-dusk-51539.herokuapp.com/
+
 ## The Idea:
 __Have a awesome game idea? Post it here!
 Are you a game developer looking for something to do? Check out our Ideas, and share with the community!
