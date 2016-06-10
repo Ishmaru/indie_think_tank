@@ -4,10 +4,12 @@ class IdeasController < ApplicationController
     @sort_by = params[:sort_by]
     if @sort_by == 'tag'
       @ideas = Idea.order(:tag)
-    elsif @sort_by == 'new'
+    elsif @sort_by == 'like'
       @ideas = Idea.all.sort_by { |idea| idea.likes.count }.reverse
-    else
+    elsif @sort_by == 'old'
       @ideas = Idea.order(:created_at)
+    else
+      @ideas = Idea.order(created_at: :desc)
     end
   end
 

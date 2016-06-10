@@ -1,19 +1,31 @@
   <% @idea.errors.full_messages.each do |message| %>
   <strong><% message %> </strong></p>
   <% end %>
-  <%= form_for @idea do |f| %>
-    <%= f.label "Idea Tag: " %>
-    <%= f.text_field :tag %>
-    <br/>
-    <%= f.label "Short Summary: " %>
-    <%= f.text_field :summary %>
-    <br/>
-    <%= f.label "Description:" %>
-    <%= f.text_field :description %>
-    <br/>
-    <%= button_tag(type: 'submit', class: 'btn btn-success') do %>
-       Add Idea
+<form>
+  <%= form_for [@idea] do |f|%>
+    <div class="row">
+      <div class="field col-md-4">
+        <%= f.text_field :tag, class: "form-control", placeholder: "Type Tag" %>
+      </div>
+    </div>
+    <br>
+      <div class="row">
+        <div class="field col-md-12">
+          <%= f.text_field :summary, class: "form-control", placeholder: "Short Summary" %>
+        </div>
+      </div>
+      <br>
+      <div class="row">
+        <div class="field col-md-12">
+          <%= f.text_field :description, class: "form-control form-control-lg", placeholder: "Description" %>
+        </div>
+      </div>
+  </form>
+  <br>
+  <div class="right">
+    <%= button_tag(type: 'submit', class: 'btn btn-success sort') do %>
+       Submit Idea
     <% end %>
-    <br/>
-    <%= link_to 'back', ideas_path, class: "btn btn-primary" %>
-  <% end %>
+    <%= link_to 'back', ideas_path, class: "btn btn-primary sort right" %>
+    <% end %>
+  </div>

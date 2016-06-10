@@ -1,16 +1,44 @@
-<h1>Log In</h1>
-<%= alert %>
-<%= form_tag sessions_path do %>
-  <div class="field">
-    <%= label_tag :user_name %>
-    <%= text_field_tag :user_name, params[:user_name] %>
+<br>
+<br>
+<div class="page-header">
+  <div class="block">
+    <h1>Welcome to Indie Think Tank! <small> The Game Idea Factory!</small></h1>
   </div>
-  <div class="field">
-    <%= label_tag :password %>
-    <%= password_field_tag :password %>
+</div>
+<div class="container login list-group-item">
+  <div class="page-header">
+    <div class="block center">
+      <h1>Please Log In!</h1>
+    </div>
   </div>
-  <%= button_tag(type: 'submit', class: 'btn btn-primary') do %>
-      Log In
-  <% end %>
-  <%= link_to 'Sign Up!', new_user_path, class: "btn btn-primary" %>
-<% end %>
+  <%= alert %>
+  <div class="vcenter">
+      <%= form_tag sessions_path do %>
+    <div class="row">
+      <div class="field col-md-1">
+      </div>
+      <div class="field col-md-5">
+        <div class="field">
+          <%= label_tag :user_name %>
+          <%= text_field_tag :user_name, params[:user_name] %>
+        </div>
+      </div>
+      <div class="field col-md-5">
+        <div class="field">
+          <%= label_tag :password %>
+          <%= password_field_tag :password %>
+        </div>
+      </div>
+      <br>
+    <div class="right">
+      <%= button_tag(type: 'submit', class: 'btn btn-success sort') do %>
+          Log In
+      <% end %>
+      <%= link_to 'Sign Up!', new_user_path, class: "btn btn-primary sort right" %>
+    </div>
+    </div>
+    <% end %>
+  </div>
+</div>
+<br>
+<br>
