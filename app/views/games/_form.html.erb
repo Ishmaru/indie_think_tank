@@ -1,32 +1,30 @@
-  <% @game.errors.full_messages.each do |message| %>
+<% @game.errors.full_messages.each do |message| %>
   <p><strong><% message %> </strong></p>
-  <% end %>
-<form>
-  <%= form_for [@idea, @game] do |f|%>
+<% end %>
+<%= form_for [@idea, @game] do |f|%>
+  <div class="row">
+    <div class="field col-md-4">
+      <%= f.text_field :title, class: "form-control", placeholder: "Game Title" %>
+    </div>
+    <div class="field col-md-4">
+      <%= f.text_field :url, class: "form-control", placeholder: "Link to Game" %>
+    </div>
+    <div class="field col-md-4">
+      <%= f.text_field :media, class: "form-control", placeholder: "Image for Game" %>
+    </div>
+  </div>
+  <br>
     <div class="row">
-      <div class="field col-md-4">
-        <%= f.text_field :title, class: "form-control", placeholder: "Game Title" %>
-      </div>
-      <div class="field col-md-4">
-        <%= f.text_field :url, class: "form-control", placeholder: "Link to Game" %>
-      </div>
-      <div class="field col-md-4">
-        <%= f.text_field :media, class: "form-control", placeholder: "Image for Game" %>
+      <div class="field col-md-12">
+        <%= f.text_field :summary, class: "form-control", placeholder: "Short Summary" %>
       </div>
     </div>
     <br>
-      <div class="row">
-        <div class="field col-md-12">
-          <%= f.text_field :summary, class: "form-control", placeholder: "Short Summary" %>
-        </div>
+    <div class="row">
+      <div class="field col-md-12">
+        <%= f.text_field :description, class: "form-control form-control-lg", placeholder: "Description" %>
       </div>
-      <br>
-      <div class="row">
-        <div class="field col-md-12">
-          <%= f.text_field :description, class: "form-control form-control-lg", placeholder: "Description" %>
-        </div>
-      </div>
-  </form>
+    </div>
   <br>
   <div class="right">
     <%= button_tag(type: 'submit', class: 'btn btn-success sort') do %>

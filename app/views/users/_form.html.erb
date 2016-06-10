@@ -1,22 +1,38 @@
-  <% @user.errors.full_messages.each do |message| %>
+<% @user.errors.full_messages.each do |message| %>
   <strong><% message %> </strong></p>
+<% end %>
+<div class="container login list-group-item">
+  <div class="page-header">
+    <div class="block center">
+      <h1>Join the Think Tank!</h1>
+    </div>
+  </div>
+<%= form_for [@user] do |f|%>
+<div class="row">
+  <div class="field col-md-6">
+    <%= f.text_field :user_name, class: "form-control", placeholder: "User Name" %>
+  </div>
+  <div class="field col-md-6">
+    <%= f.text_field :email, class: "form-control", placeholder: "youremail@email.com" %>
+  </div>
+</div>
+<br>
+<div class="row">
+  <div class="field col-md-1">
+  </div>
+  <div class="field col-md-5">
+    <%= f.password_field :password, class: "form-control", placeholder: "Password" %>
+  </div>
+  <div class="field col-md-5">
+    <%= f.password_field :password_confirmation, class: "form-control", placeholder: "Confirm Pasword" %>
+  </div>
+</div>
+<br>
+<div class="right">
+  <%= button_tag(type: "submit", class: "btn btn-success sort right") do %>
+     Create Account
   <% end %>
-  <%= form_for @user do |f| %>
-    <%= f.label "User Name: " %>
-    <%= f.text_field :user_name %>
-    <br/>
-    <%= f.label "Email: " %>
-    <%= f.text_field :email %>
-    <br/>
-    <%= f.label "password:" %>
-    <%= f.password_field :password %>
-    <br/>
-    <%= f.label "password_confirmation:" %>
-    <%= f.password_field :password_confirmation %>
-    <br/>
-    <%= button_tag(type: 'submit', class: 'btn btn-success') do %>
-       Create Account
-    <% end %>
-    <br/>
-    <%= link_to 'back', root_path, class: "btn btn-secondary" %>
+  <%= link_to 'back', root_path, class: "btn btn-primary sort" %>
   <% end %>
+</div>
+</div>
