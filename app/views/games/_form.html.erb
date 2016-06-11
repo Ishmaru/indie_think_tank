@@ -31,7 +31,8 @@
        Submit Idea
     <% end %>
     <%= link_to 'back', games_path, class: "btn btn-primary sort right" %>
-    <% end %>
+    <%= link_to "Remove Game", game_path, class: "btn btn-danger sort right", method: :delete, data: {confirm: "Remove Game?"} %>
   </div>
+<% end %>
 <br>
 <br>

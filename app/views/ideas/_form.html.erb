@@ -27,8 +27,9 @@
   <%= button_tag(type: 'submit', class: 'btn btn-success sort') do %>
      Submit Idea
   <% end %>
-  <%= link_to 'back', ideas_path, class: "btn btn-primary sort right" %>
-  <% end %>
+  <%= link_to 'Back', ideas_path, class: "btn btn-primary sort right" %>
+  <%= link_to "Remove Idea", idea_path, class: "btn btn-danger sort right", method: :delete, data: {confirm: "Remove Idea?"} %>
 </div>
+<% end %>
 <br>
 <br>

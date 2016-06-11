@@ -1,7 +1,4 @@
- <h3>Please Update your game: <%= @game.title %></h3>
-
-
-<%= render 'form' %>
-
+<h3>Please Update your game: <%= @game.title %></h3>
 <br>
-<%= link_to "Remove Game", game_path, method: :delete, data: {confirm: "Remove Game?"} %>
+<%= render 'form' %>
+<br>
