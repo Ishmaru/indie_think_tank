@@ -33,10 +33,6 @@ https://trello.com/b/5NLOupcn/indie-think-tank
 ## Process/Retrospective
 First full stack development project. Luckily, thanks to all the repetition of the course and Rails convention over customization, this project came without many big issues. Smaller issues were easily identified and fixed. Setting up my models/resources/controllers was pretty easy, though repetitive, for most of the week. 
 
-![](http://s.quickmeme.com/img/0f/0fb7b038f350e57268e16083c540cbf330492e5e810116b1a57cbe148d501ed2.jpg)
-
-I'm not going to talk about sessions as its pretty much exactly the same no matter what rails project.
-
 #### Tables/Relationships
 The relationships were straightforward, only One to Many relationships (in MVP).
 
@@ -75,8 +71,6 @@ With some research and help from Stephanie I found a way to use the .order metho
 However, this fell apart when I added a Like table. Like is essentially a join table so a user can like an idea, and limit like to one. With the help of Jim, adding and displaying Likes worked no problem, I wanted to add a __Sort by Popularity__ link. .order was insufficient. I needed a method that I can pass both the idea (to sort) and idea.like.count to process the how many likes belong to that idea. The .sort_by method allowed me to do that. Thanks Jim!
 
 ## Cleaning my code up:
-![](http://s2.quickmeme.com/img/f7/f7290d32f2d7cee65d73e62a170f4b62050a2d18555516d1391388dececbe0f3.jpg)
-
 
 #### Partials
 I tried to dry up my code with use of Partials, I have form partials, a navbar partial, even partials for buttons with hide/show logic, that appear several times in my app. (ex Add Idea and Make this A Game) I also have a partial to render lists of games and ideas, where you can pass in values of how many to render via the respective resource controller. On top of that my Sorting buttons are also partials.
