@@ -82,8 +82,6 @@ I normally like to comment my code. However, since rails convention are pretty s
 
 Ha Ha either you love it or hate it. I wanted it to be loud and playful, and stick to the retro 90's - to the early 2000's vibes so important to the indie game movement. So Pixelated backgrounds, dark colors, and bright neon "hacker terminal" themed text. Bright green text and borders. Add layers of transparent backgrounds for a more 3D look. I tried my best to stay away from a myspace themed app, though very tempting.
 
-![](http://www.blogodisea.com/wp-content/uploads/2009/11/simpson-homer-mister-x-imagen.jpg)
-
 
 ## Special Thanks:
 #### General Assembly
